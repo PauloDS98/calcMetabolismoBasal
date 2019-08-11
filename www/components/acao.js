@@ -47,6 +47,10 @@ $(document).ready(function(){
       $(".img-mulher").hide();
     })
 
+    $(document).on("click", ".confirmMulher", function(){
+      mulher = true;
+      $(location).attr("href", "atividade.html");
+    })
 
  
 });
