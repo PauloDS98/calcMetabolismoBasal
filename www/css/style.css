@@ -92,7 +92,7 @@ button{
 
 .img-mulher{
   position: fixed;
-  top: 7vh;
+  top: 13vh;
   left: 8.5vh;
 }
 .img-homem{
@@ -109,6 +109,8 @@ button{
 }
 
 .texto{
-  margin-top: 10px;
-  margin-left: 8.5vh;
+  margin-top: 12px;
+  margin-left: 0px;
+  text-align: center;
+  font-family: Broadway;
 }
