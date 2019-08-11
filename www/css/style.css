@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
 }
+
 body{
   background-color: grey;
   width: 100%;
@@ -12,10 +13,12 @@ body{
   height: 100%;
 }
 .container{
+  position: fixed;
   background-color: whitesmoke;
   width: 85%;
   height: 70vh;
-  margin: 100px auto;
+  top: 15vh;
+  left: 4vh;
   border-radius: 20px;
   padding: 0;
 }
@@ -58,4 +61,39 @@ button{
   bottom: 35vh;
   left: 8.5vh;
   border: solid 3px #528ed3;
+}
+
+.confirmMulher{
+  position: fixed;
+  bottom: 35vh;
+  left: 8.5vh;
+  border: solid 3px #72db69;
+  background-color: #72db69;
+}
+
+.confirmHomem{
+  position: fixed;
+  bottom: 35vh;
+  left: 8.5vh;
+  border: solid 3px #72db69;
+  background-color: #72db69;
+}
+
+.img-mulher{
+  position: fixed;
+  top: 7vh;
+  left: 8.5vh;
+}
+
+.btnCancel{
+  position: fixed;
+  bottom: 20vh;
+  left: 8.5vh;
+  border: solid 3px hsl(4, 66%, 57%);
+  background-color: hsl(4, 66%, 57%);
+}
+
+.texto{
+  margin-top: 10px;
+  margin-left: 8.5vh;
 }
