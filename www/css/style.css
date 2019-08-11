@@ -59,3 +59,13 @@ button{
   left: 8.5vh;
   border: solid 3px #528ed3;
 }
+
+.perguntas{ 
+  width: 100%;
+  text-align: center;
+  font-size: 22px;
+}
+
+.quest{
+  margin-top: 10px;
+}
