@@ -34,6 +34,19 @@ $(document).ready(function(){
       $(".img-homem").show();
     });
 
+    $(document).on("click", ".btnCancel", function(){
+      $("body").css("background-color", "grey");
+      $(".container").css("background-color", "whitesmoke");
+      $(".mulher").show();
+      $(".homem").show();
+      $(".texto").html("Qual é seu sexo:")
+      $(".confirmHomem").hide();
+      $(".confirmMulher").hide();
+      $('.btnCancel').hide();
+      $(".img-homem").hide();
+      $(".img-mulher").hide();
+    })
+
 
  
 });
