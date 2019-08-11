@@ -3,7 +3,7 @@ var homem = false;
 
 $(document).ready(function(){
     
-
+    $(".img-workout").hide();
     $(".confirmMulher").hide();
     $('.btnCancel').hide();
     $(".confirmHomem").hide();
@@ -49,6 +49,11 @@ $(document).ready(function(){
 
     $(document).on("click", ".confirmMulher", function(){
       mulher = true;
+      $(location).attr("href", "atividade.html");
+    })
+
+    $(document).on("click", ".confirmHomem", function(){
+      homem = true;
       $(location).attr("href", "atividade.html");
     })
 

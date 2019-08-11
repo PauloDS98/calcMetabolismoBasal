@@ -76,6 +76,13 @@ button{
   margin-top: 2vh;
   border: solid 1px black;
 }
+
+.img-workout{
+  position: fixed;
+  left: 25vh;
+  margin-top: 2vh;
+
+}
 .perguntas{ 
   width: 100%;
   text-align: center;
