@@ -95,7 +95,11 @@ button{
   top: 7vh;
   left: 8.5vh;
 }
-
+.img-homem{
+  position: fixed;
+  top: 7vh;
+  left: 8.5vh;
+}
 .btnCancel{
   position: fixed;
   bottom: 20vh;

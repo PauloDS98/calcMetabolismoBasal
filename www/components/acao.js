@@ -8,6 +8,7 @@ $(document).ready(function(){
     $('.btnCancel').hide();
     $(".confirmHomem").hide();
     $(".img-mulher").hide();
+    $(".img-homem").hide();
 
     
 
@@ -20,6 +21,17 @@ $(document).ready(function(){
       $(".confirmMulher").show();
       $('.btnCancel').show();
       $(".img-mulher").show();
+    });
+
+    $(document).on("click", ".homem", function(){
+      $("body").css("background-color", "#528ed3");
+      $(".container").css("background-color", "#528ed3");
+      $(".mulher").hide();
+      $(".homem").hide();
+      $(".texto").html("Você é um homem?")
+      $(".confirmHomem").show();
+      $('.btnCancel').show();
+      $(".img-homem").show();
     });
 
 
