@@ -1,17 +1,31 @@
 *{
   margin: 0;
   padding: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
 }
 
-body{
-  background-color: grey;
-  width: 100%;
-  height: 100%;
-}
+
 .quadro{
+  background-color: white;
+  position: none ;
+  width: 0;
+  height: 0;
+  top: 0;
+  left:0;
+  border-radius:0; 
+  border:0;
+}
+body{
+  background-color: #d86565;
   width: 100%;
   height: 100%;
 }
+
 .container{
   position: fixed;
   background-color: whitesmoke;
@@ -19,8 +33,9 @@ body{
   height: 70vh;
   top: 15vh;
   left: 4vh;
-  border-radius: 20px;
+  border-radius: 30px;
   padding: 0;
+
 }
 button{
   width: 70%;
@@ -53,7 +68,7 @@ button{
   position: fixed;
   top: 35vh;
   left: 8.5vh;
-  border: solid 3px pink;
+  border: solid 3px #ffc0cb;
 }
 
 .homem{
@@ -61,6 +76,36 @@ button{
   bottom: 35vh;
   left: 8.5vh;
   border: solid 3px #528ed3;
+  
+}
+.textoAuxiliarAtv{
+  color: black;
+  position: fixed;
+  left: 12vh;
+  top: 35vh;
+  font-size: 16px;
+
+}
+.cancelAtv{
+  position: fixed;
+  left: 14vh;
+  margin-top: 25vh;
+  border: solid 1px #a84141;
+  background-color: #a84141;
+  width: 50%;
+  height: 7vh;
+}
+.escolha{
+  position: fixed;
+  left: 8.5vh;
+  margin-top: 2vh;
+  border: solid 1px black;
+}
+
+.textoAuxiliar{
+  position: fixed;
+  left: 16vh;
+  top: 17vh;
 }
 
 
@@ -82,6 +127,16 @@ button{
   background-color: #72db69;
 }
 
+.confirmLevemente{
+  position: fixed;
+  left: 14vh;
+  margin-top: 30vh;
+  width: 50%;
+  height: 7vh;
+  border: solid 3px rgb(73, 145, 66);
+  background-color: rgb(73, 145, 66);
+}
+
 .confirmHomem{
   position: fixed;
   bottom: 35vh;
@@ -97,7 +152,7 @@ button{
 }
 .img-homem{
   position: fixed;
-  top: 7vh;
+  top: 13vh;
   left: 8.5vh;
 }
 .btnCancel{
@@ -113,4 +168,42 @@ button{
   margin-left: 0px;
   text-align: center;
   font-family: Broadway;
+  color: white;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: px;
+}
+
+.btn1{
+  width: 100%;
+  height: 14vh;
+  border-top-left-radius:  20px;
+  border-top-right-radius:  20px;
+}
+.btn2{
+  width: 100%;
+  height: 14vh;
+}
+.btn3{
+  width: 100%;
+  height: 14vh;
+}
+.btn4{
+  width: 100%;
+  height: 14vh;
+}
+.btn5{
+  width: 100%;
+  height: 14vh;
+  border-bottom-left-radius:  20px;
+  border-bottom-right-radius:  20px;
+}
+
+.confirmSedentario{
+  position: fixed;
+  left: 14vh;
+  margin-top: 30vh;
+  width: 50%;
+  height: 7vh;
+  border: solid 3px rgb(73, 145, 66);
+  background-color: rgb(73, 145, 66);
 }
