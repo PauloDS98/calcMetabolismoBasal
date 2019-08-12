@@ -1,5 +1,10 @@
 var mulher = false;
 var homem = false;
+var sedentario = false;
+var levAtivo = false;
+var modAtivo = false;
+var altAtivo = false;
+var ExtAtivo = false;
 
 $(document).ready(function(){
     
