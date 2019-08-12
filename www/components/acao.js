@@ -70,6 +70,7 @@ $(document).ready(function(){
   //Botão de escolha sedentario
     $(document).on("click", ".btnSedentario", function(){
       $(".escolha").hide();
+      $(".confirmModeradamente").hide();   
       $(".confirmLevemente").hide();
       $(".confirmSedentario").show();           
       $(".cancelAtv").show();
@@ -89,6 +90,7 @@ $(document).ready(function(){
     $(document).on("click", ".btnLAtivo", function(){
       $(".cancelAtv").show();
       $(".escolha").hide();
+      $(".confirmModeradamente").hide();   
       $(".confirmSedentario").hide();           
       $(".confirmLevemente").show();         
       $(".cancelAtv").show();
@@ -109,7 +111,8 @@ $(document).ready(function(){
       $(".cancelAtv").show();
       $(".escolha").hide();
       $(".confirmSedentario").hide();           
-      $(".confirmLevemente").show();         
+      $(".confirmLevemente").hide();  
+      $(".confirmModeradamente").show();       
       $(".cancelAtv").show();
       $(".quadro").css("background-color", "white");
       $(".quadro").css("position", "fixed");
@@ -127,8 +130,10 @@ $(document).ready(function(){
     $(document).on("click", ".btnAAtivo", function(){
       $(".cancelAtv").show();
       $(".escolha").hide();
+      $(".confirmAltamente").show();
+      $(".confirmModeradamente").hide();
       $(".confirmSedentario").hide();           
-      $(".confirmLevemente").show();         
+      $(".confirmLevemente").hide();         
       $(".cancelAtv").show();
       $(".quadro").css("background-color", "white");
       $(".quadro").css("position", "fixed");
@@ -176,9 +181,31 @@ $(document).ready(function(){
       $(".textoAuxiliar").hide();
       $(".confirmSedentario").hide();
       $(".confirmLevemente").hide();       
+      $(".confirmModeradamente").hide();
+      $(".confirmAltamente").hide();   
     })
 
+    $(document).on("click", ".confirmSedentario", function(){
 
+      sedentario = true;
+      $(location).attr("href", "questionario.html");
+    })
+
+    $(document).on("click", ".confirmLevemente", function(){
+        levAtivo = true;
+        $(location).attr("href", "questionario.html");
+    })
+
+    $(document).on("click", ".confirmModeradamente", function(){
+        modAtivo = true;
+        $(location).attr("href", "questionario.html");
+    })
+
+    $(document).on("click", ".confirmAltamente", function(){
+
+      altAtivo = true;
+      $(location).attr("href", "questionario.html");
+    })
 
  
 });
