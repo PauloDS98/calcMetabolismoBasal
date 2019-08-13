@@ -1,19 +1,27 @@
-var mulher = false;
-var homem = false;
-var sedentario = false;
-var levAtivo = false;
-var modAtivo = false;
-var altAtivo = false;
-var ExtAtivo = false;
+    var mulher = 0;
+    var homem = 0;
+    var sedentario = 0;
+    var levAtivo = 0;
+    var modAtivo = 0;
+    var altAtivo = 0;
+    var extAtivo = 0;
+
 
 $(document).ready(function(){
     
+
     $(".confirmMulher").hide();
     $('.btnCancel').hide();
     $(".confirmHomem").hide();
     $(".img-mulher").hide();
     $(".img-homem").hide();
     $(".cancelAtv").hide();
+    $(".textoAuxiliar").hide();
+    $(".confirmSedentario").hide();
+    $(".confirmLevemente").hide();       
+    $(".confirmModeradamente").hide();
+    $(".confirmAltamente").hide();
+    $(".confirmExtremamente").hide();   
 
     
 
@@ -58,12 +66,12 @@ $(document).ready(function(){
 
   //Confirmação de ser Mulher
     $(document).on("click", ".confirmMulher", function(){
-      mulher = true;
+      mulher++;
       $(location).attr("href", "atividade.html");
     })
   //Confirmação de ser Homem
     $(document).on("click", ".confirmHomem", function(){
-      homem = true;
+      homem++;
       $(location).attr("href", "atividade.html");
     })
 
@@ -72,6 +80,8 @@ $(document).ready(function(){
       $(".escolha").hide();
       $(".confirmModeradamente").hide();   
       $(".confirmLevemente").hide();
+      $(".confirmAltamente").hide();
+      $(".confirmExtremamente").hide();
       $(".confirmSedentario").show();           
       $(".cancelAtv").show();
       $(".quadro").css("background-color", "white");
@@ -91,6 +101,7 @@ $(document).ready(function(){
       $(".cancelAtv").show();
       $(".escolha").hide();
       $(".confirmModeradamente").hide();   
+       $(".confirmExtremamente").hide();
       $(".confirmSedentario").hide();           
       $(".confirmLevemente").show();         
       $(".cancelAtv").show();
@@ -112,6 +123,7 @@ $(document).ready(function(){
       $(".escolha").hide();
       $(".confirmSedentario").hide();           
       $(".confirmLevemente").hide();  
+       $(".confirmExtremamente").hide();
       $(".confirmModeradamente").show();       
       $(".cancelAtv").show();
       $(".quadro").css("background-color", "white");
@@ -131,6 +143,7 @@ $(document).ready(function(){
       $(".cancelAtv").show();
       $(".escolha").hide();
       $(".confirmAltamente").show();
+      $(".confirmExtremamente").hide();
       $(".confirmModeradamente").hide();
       $(".confirmSedentario").hide();           
       $(".confirmLevemente").hide();         
@@ -151,8 +164,11 @@ $(document).ready(function(){
     $(document).on("click", ".btnEAtivo", function(){
       $(".cancelAtv").show();
       $(".escolha").hide();
+      $(".confirmExtremamente").show();
+      $(".confirmAltamente").hide();
+      $(".confirmModeradamente").hide();
       $(".confirmSedentario").hide();           
-      $(".confirmLevemente").show();         
+      $(".confirmLevemente").hide();          
       $(".cancelAtv").show();
       $(".quadro").css("background-color", "white");
       $(".quadro").css("position", "fixed");
@@ -182,29 +198,77 @@ $(document).ready(function(){
       $(".confirmSedentario").hide();
       $(".confirmLevemente").hide();       
       $(".confirmModeradamente").hide();
-      $(".confirmAltamente").hide();   
+      $(".confirmAltamente").hide();
+       $(".confirmExtremamente").hide();   
     })
 
     $(document).on("click", ".confirmSedentario", function(){
 
-      sedentario = true;
+      sedentario++;
       $(location).attr("href", "questionario.html");
     })
 
     $(document).on("click", ".confirmLevemente", function(){
-        levAtivo = true;
+        levAtivo++;
         $(location).attr("href", "questionario.html");
     })
 
     $(document).on("click", ".confirmModeradamente", function(){
-        modAtivo = true;
+        modAtivo++;
         $(location).attr("href", "questionario.html");
     })
 
     $(document).on("click", ".confirmAltamente", function(){
 
-      altAtivo = true;
+      altAtivo++;
       $(location).attr("href", "questionario.html");
+    })
+
+    $(document).on("click"), ".confirmExtremamente", function(){
+      extAtivo++;
+      $(location).attr("href", "questionario.html");
+    }
+
+    $(document).on("click", ".btnEnviarDados", function(){
+      var altura = $("#altura").val() * 100;
+      var peso = $("#peso").val();
+      var idade = $("#idade").val();
+
+      if((mulher == 1) && (sedentario == 1)){
+        var resultado = "1.2 * (655 + (9.6 * peso ) + (1.8 * altura) - (4.7 * idade))";
+
+      } else if ((mulher == 1) && (levAtivo == 1)){
+        var resultado = 1.375 * (655 + (9.6 * peso ) + (1.8 * altura) - (4.7 * idade));
+
+      } else if ((mulher == 1) && (modAtivo == 1)){
+        var resultado = 1.55 * (655 + (9.6 * peso ) + (1.8 * altura) - (4.7 * idade));
+
+      } else if ((mulher == 1) && (altAtivo == 1)){
+        var resultado = 1.725 * (655 + (9.6 * peso ) + (1.8 * altura) - (4.7 * idade));
+
+      } else if ((mulher == 1) && (extAtivo == 1)){
+        var resultado = 1.9 * (655 + (9.6 * peso ) + (1.8 * altura) - (4.7 * idade));
+      } 
+
+      if((homem == 1) && (sedentario == 1)){
+        var resultado = 1.2 * (66 + (13.7 * peso) + (5 * altura) - (6.8 * idade));
+
+      } else if ((homem == 1) && (levAtivo == 1)){
+        var resultado = 1.375 * (66 + (13.7 * peso) + (5 * altura) - (6.8 * idade));
+
+      } else if ((homem == 1) && (modAtivo == 1)){
+        var resultado = 1.55 * (66 + (13.7 * peso) + (5 * altura) - (6.8 * idade));
+
+      } else if ((homem == 1) && (altAtivo == 1)){
+        var resultado = 1.725 * (66 + (13.7 * peso) + (5 * altura) - (6.8 * idade));
+
+      } else if ((homem == 1) && (extAtivo == 1)){
+        var resultado = 1.9 * (66 + (13.7 * peso) + (5 * altura) - (6.8 * idade));
+      } else {
+      }
+
+      $(".ajusteTexto").text(resultado);
+      
     })
 
  
