@@ -1,15 +1,9 @@
-    var mulher = 0;
-    var homem = 0;
-    var sedentario = 0;
-    var levAtivo = 0;
-    var modAtivo = 0;
-    var altAtivo = 0;
-    var extAtivo = 0;
-
-
-$(document).ready(function(){
+var key = 0;
+   $(document).ready(function(){
     
-
+    $(".resultado").hide();
+    $(".resultado1").hide();
+    $(".resultado").hide();
     $(".confirmMulher").hide();
     $('.btnCancel').hide();
     $(".confirmHomem").hide();
@@ -65,15 +59,25 @@ $(document).ready(function(){
     })
 
   //Confirmação de ser Mulher
-    $(document).on("click", ".confirmMulher", function(){
-      mulher++;
-      $(location).attr("href", "atividade.html");
+    $(document).on("click", ".confirmMulher", function(){     
+        var sexo = new Array();
+        var sexo1 = {sexo: "mulher"};
+        sexo.push(sexo1);
+        localStorage.setItem(key, JSON.stringify(sexo));
+        $(location).attr("href", "atividade.html");
+        
     })
   //Confirmação de ser Homem
     $(document).on("click", ".confirmHomem", function(){
-      homem++;
+      var sexo = new Array();
+      var sexo1 = {sexo: "homem"};
+      sexo.push(sexo1);
+      localStorage.setItem(key, JSON.stringify(sexo));
+       key++;
       $(location).attr("href", "atividade.html");
+      
     })
+
 
   //Botão de escolha sedentario
     $(document).on("click", ".btnSedentario", function(){
@@ -203,71 +207,78 @@ $(document).ready(function(){
     })
 
     $(document).on("click", ".confirmSedentario", function(){
-
-      sedentario++;
+        key = 1;
+        var atividade = new Array();
+        var atividade1 = {valor: 1.2};
+        atividade.push(atividade1);
+        localStorage.setItem(key, JSON.stringify(atividade));
       $(location).attr("href", "questionario.html");
     })
 
     $(document).on("click", ".confirmLevemente", function(){
-        levAtivo++;
+        key = 1;
+        var atividade = new Array();
+        var atividade1 = {valor: 1.375};
+        atividade.push(atividade1);
+        localStorage.setItem(key, JSON.stringify(atividade));
+         
         $(location).attr("href", "questionario.html");
     })
 
     $(document).on("click", ".confirmModeradamente", function(){
-        modAtivo++;
+        key = 1;
+        var atividade = new Array();
+        var atividade1 = {valor: 1.55};
+        atividade.push(atividade1);
+        localStorage.setItem(key, JSON.stringify(atividade));
+
         $(location).attr("href", "questionario.html");
     })
 
     $(document).on("click", ".confirmAltamente", function(){
 
-      altAtivo++;
+        key = 1;
+        var atividade = new Array();
+        var atividade1 = {valor: 1.725};
+        atividade.push(atividade1);
+        localStorage.setItem(key, JSON.stringify(atividade));
+        atividadePessoa = 1.725;
       $(location).attr("href", "questionario.html");
     })
 
     $(document).on("click"), ".confirmExtremamente", function(){
-      extAtivo++;
+        key = 1;
+        var atividade = new Array();
+        var atividade1 = {valor: 1.9};
+        atividade.push(atividade1);
+        localStorage.setItem(key, JSON.stringify(atividade));
+        atividadePessoa = 1.9;
       $(location).attr("href", "questionario.html");
     }
 
     $(document).on("click", ".btnEnviarDados", function(){
+      var registro1 = JSON.parse(localStorage.getItem(1));
+      var registro = JSON.parse(localStorage.getItem(0));
+      var valor = registro1[0].valor;
+      var sexo = registro[0].sexo;
       var altura = $("#altura").val() * 100;
       var peso = $("#peso").val();
       var idade = $("#idade").val();
 
-      if((mulher == 1) && (sedentario == 1)){
-        var resultado = "1.2 * (655 + (9.6 * peso ) + (1.8 * altura) - (4.7 * idade))";
+      if(sexo == "mulher"){
 
-      } else if ((mulher == 1) && (levAtivo == 1)){
-        var resultado = 1.375 * (655 + (9.6 * peso ) + (1.8 * altura) - (4.7 * idade));
-
-      } else if ((mulher == 1) && (modAtivo == 1)){
-        var resultado = 1.55 * (655 + (9.6 * peso ) + (1.8 * altura) - (4.7 * idade));
-
-      } else if ((mulher == 1) && (altAtivo == 1)){
-        var resultado = 1.725 * (655 + (9.6 * peso ) + (1.8 * altura) - (4.7 * idade));
-
-      } else if ((mulher == 1) && (extAtivo == 1)){
-        var resultado = 1.9 * (655 + (9.6 * peso ) + (1.8 * altura) - (4.7 * idade));
-      } 
-
-      if((homem == 1) && (sedentario == 1)){
-        var resultado = 1.2 * (66 + (13.7 * peso) + (5 * altura) - (6.8 * idade));
-
-      } else if ((homem == 1) && (levAtivo == 1)){
-        var resultado = 1.375 * (66 + (13.7 * peso) + (5 * altura) - (6.8 * idade));
-
-      } else if ((homem == 1) && (modAtivo == 1)){
-        var resultado = 1.55 * (66 + (13.7 * peso) + (5 * altura) - (6.8 * idade));
-
-      } else if ((homem == 1) && (altAtivo == 1)){
-        var resultado = 1.725 * (66 + (13.7 * peso) + (5 * altura) - (6.8 * idade));
-
-      } else if ((homem == 1) && (extAtivo == 1)){
-        var resultado = 1.9 * (66 + (13.7 * peso) + (5 * altura) - (6.8 * idade));
-      } else {
+        var resultado = valor * (655 + (9.6 * peso) + (1.8 * altura) - (4.7 * idade))
+      }
+      else if (sexo == "homem"){
+        
+        var resultado = valor * (66 + (13.7 * peso) + (5 * altura) - (6.8 * idade))
       }
 
-      $(".ajusteTexto").text(resultado);
+      $(".perguntas").hide();
+       $(".resultado").show();
+       $(".resultado1").show();
+
+       $(".resultado1").val(resultado);
       
     })
 
