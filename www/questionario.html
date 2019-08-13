@@ -18,21 +18,30 @@
 
 </head>
 <body>
-  <h1 class="texto"> Agora para concluir preencha os dados abaixo: </h1>
+  <h1 class="texto"> Preencha os dados: </h1>
  <div class="container">
-
+    <h1 class="resultado"> Resultado: </h1>
+    <input class="resultado1 ajusteInput" value>
    <div class="perguntas">
      <!-- Pergunta de idade -->
-      <h3>Quantos anos você tem?</h3>
-       <input type="number" class="idade_pergunta quest" value="">
+        <div class="pergunta1">
+            <h3 class="ajusteTexto"> Idade: </h3>
+            <input type="number" id="idade" class="ajusteInput">
+        </div>
      <!-- Pergunta de peso -->
-     <h3>Qual e seu peso?</h3>
-       <input type="number" class="peso_pergunta quest" value="">
+        <div class="pergunta2">
+            <h3 class="ajusteTexto"> Peso: </h3>
+            <input type="number" id="peso" class="ajusteInput">
+        </div>
      <!-- Pergunta de altura -->
-     <h3>Qual e a sua altura?</h3>
-       <input type="number" class="altura_pergunta quest" value="">
-        <br>
-       <input type="button" class="enviar_botao botao quest" value="Fazer calculo">
+        <div class="pergunta3">
+            <h3 class="ajusteTexto"> Altura: </h3>
+            <input type="number" id="altura" class="ajusteInput">
+        </div>
+
+        <div class="botaoEnviar">
+            <button type="submit" class="btnEnviarDados"> Enviar </button>
+        </div>
    </div>
 
  </div>

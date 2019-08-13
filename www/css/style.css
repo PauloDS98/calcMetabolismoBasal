@@ -9,6 +9,22 @@
   user-select: none
 }
 
+*:hover{
+  text-decoration: none;
+  outline: 0;
+}
+*:link{
+  text-decoration: none;
+  outline: 0;
+}
+*:focus{
+  text-decoration: none;
+  outline: 0;
+}
+*:active{
+  text-decoration: none;
+  outline: 0;
+}
 
 .quadro{
   background-color: white;
@@ -111,17 +127,6 @@ button{
   
 }
 
-
-.perguntas{ 
-  width: 100%;
-  text-align: center;
-  font-size: 22px;
-}
-
-.quest{
-  margin-top: 10px;
-}
-
 .confirmMulher{
   position: fixed;
   bottom: 35vh;
@@ -130,7 +135,7 @@ button{
   background-color: #72db69;
 }
 
-.confirmLevemente{
+.ajusteBotao{
   position: fixed;
   left: 14vh;
   margin-top: 16vh;
@@ -209,4 +214,46 @@ button{
   height: 7vh;
   border: solid 3px rgb(73, 145, 66);
   background-color: rgb(73, 145, 66);
+}
+
+.pergunta1{
+  width: 100%;
+  height: 18vh;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.pergunta2{
+  width: 100%;
+  height: 18vh;
+}
+
+.pergunta3{
+  width: 100%;
+  height: 18vh;
+}
+
+.botaoEnviar{
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  width: 100%;
+  height: 18vh;
+}
+
+.ajusteInput{
+  border-style: none;
+  width: 60%;
+  height: 30%;
+  border-radius: 30px;
+  padding-left: 10px;
+}
+
+.ajusteTexto{
+  margin-bottom: 2vh;
+  margin-top: 1vh;
+  font-size: 5vh;
+}
+
+.btnEnviarDados{
+  background-color: #72db69;
 }
